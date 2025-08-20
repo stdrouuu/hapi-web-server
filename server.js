@@ -1,4 +1,4 @@
-// Building simple Hapi.js web Server
+// Building a simple Hapi.js web Server
 // npm install @hapi/hapi
 const Hapi = require("@hapi/hapi");
 
