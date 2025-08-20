@@ -80,14 +80,19 @@
 // };
 
 // init();
-// to see response, run in terminal/cmd:-------------------------------------------------------------------------
+// to see response, run in terminal/cmd:------------------------------------------------------------------------------
 // curl -X GET http://localhost:5000/hello/brandon?lang=id => output: Hai, brandon!
 // curl -X GET http://localhost:5000/hello/brandon ==> output: Hello, brandon!
 
 
-// 5. Body/Payload Parameter---------------------------------------------------------------------------------------
+// 5. Body/Payload Parameter-------------------------------------------------------------------------------------------
 // di native node.js harus pake readable stream (JSON.parse)
 // di hapi, ud otomatis ubah JSON jadi javascript object (g perlu pake JSON.parse)
-// pk request.payload
+// pake request.payload
 
 
+// 6. Response Toolkit (h)-------------------------------------------------------------------------------------------------- 
+// ada 2 parameter, request dan h
+// klo pake request doangdan cuma return string, otomatis selalu bernilai 200 OK 
+// h untuk ngatur lebih detail ttg respons spt: ubah nilai response kayak 201.
+// pake h.response()
