@@ -40,6 +40,55 @@
 // module.exports = routes;
 
 // 3. Path Parameter
+// const routes = [
+//   {
+//     method: "GET",
+//     path: "/",
+//     handler: (request, h) => {
+//       return "Homepage";
+//     },
+//   },
+//   {
+//     method: "*",
+//     path: "/",
+//     handler: (request, h) => {
+//       return "Halaman tidak dapat diakses dengan method tersebut";
+//     },
+//   },
+//   {
+//     method: "GET",
+//     path: "/about",
+//     handler: (request, h) => {
+//       return "About page";
+//     },
+//   },
+//   {
+//     method: "*",
+//     path: "/about",
+//     handler: (request, h) => {
+//       return "Halaman tidak dapat diakses dengan method";
+//     },
+//   },
+//   {
+//     method: "GET",
+//     path: "/hello/{name?}",
+//     handler: (request, h) => {
+//       const { name = "stranger" } = request.params;
+//       return `Hello, ${name}!`;
+//     },
+//   },
+//   {
+//     method: "*",
+//     path: "/{any*}",
+//     handler: (request, h) => {
+//       return "Halaman tidak ditemukan";
+//     },
+//   },
+// ];
+
+// module.exports = routes;
+
+// 4. Query Parameter
 const routes = [
   {
     method: "GET",
@@ -74,14 +123,13 @@ const routes = [
     path: "/hello/{name?}",
     handler: (request, h) => {
       const { name = "stranger" } = request.params;
+      const { lang } = request.query;
+
+      if (lang === "id") {
+        return `Hai, ${name}!`;
+      }
+
       return `Hello, ${name}!`;
-    },
-  },
-  {
-    method: "*",
-    path: "/{any*}",
-    handler: (request, h) => {
-      return "Halaman tidak ditemukan";
     },
   },
 ];
